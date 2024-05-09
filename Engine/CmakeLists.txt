@@ -1,0 +1,6 @@
+add_library(${ENGINE} SHARED 
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Entry.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Entry.cpp
+) 
+
+target_include_directories(${ENGINE} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)

@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.26.0)
+
+project(Hazel_ENGINE
+VERSION 1.0.0
+LANGUAGES C CXX
+)
+
+set(CXX_STANDARD 14)
+set(CXX_STANDARD_REQUIRED ON)
+set (CXX_EXTENSIONS off)
+
+set(ENGINE Engine)
+set(BOX SandBox)
+
+add_subdirectory(${ENGINE})
+add_subdirectory(${BOX})

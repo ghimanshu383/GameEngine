@@ -1,0 +1,15 @@
+add_executable(${BOX} 
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+)
+
+target_include_directories (${BOX} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+
+target_link_libraries(${BOX} PUBLIC ${ENGINE})
+
+add_custom_command(TARGET 
+${BOX} 
+POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E copy 
+$<TARGET_RUNTIME_DLLS:${BOX}> 
+$<TARGET_FILE_DIR:${BOX}>
+)
