@@ -11,6 +11,25 @@ set (CXX_EXTENSIONS off)
 
 set(ENGINE Engine)
 set(BOX SandBox)
+set(LOG spdlog)
+
+include (FetchContent)
+
+FetchContent_Declare(${LOG} 
+GIT_REPOSITORY https://github.com/gabime/spdlog.git
+GIT_TAG v1.14.1
+GIT_SHALLOW FALSE
+)
+
+FetchContent_MakeAvailable(${LOG})
+
+FetchContent_Declare(glfw 
+GIT_REPOSITORY https://github.com/glfw/glfw.git
+GIT_TAG 3.4
+GIT_SHALLOW FALSE
+)
+
+FetchContent_MakeAvailable(glfw)
 
 add_subdirectory(${ENGINE})
 add_subdirectory(${BOX})

@@ -1,6 +1,16 @@
-add_library(${ENGINE} SHARED 
+add_library(${ENGINE} STATIC 
 	${CMAKE_CURRENT_SOURCE_DIR}/includes/Entry.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Entry.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/core.h
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Hazel.h
+
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Log.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Log.cpp
 ) 
 
-target_include_directories(${ENGINE} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+target_include_directories(${ENGINE} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes "D:/opengl/glew/include")
+target_link_libraries(${ENGINE} PUBLIC spdlog)
+target_link_libraries(${ENGINE} PUBLIC opengl32.lib)
+target_link_libraries(${ENGINE} PUBLIC "D:/opengl/glew/lib/Release/x64/glew32.lib")
+target_link_libraries(${ENGINE} PUBLIC glfw)
