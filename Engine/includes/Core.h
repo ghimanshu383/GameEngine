@@ -12,6 +12,9 @@ using shared = std::shared_ptr<T>;
 template<typename T>
 using unique = std::unique_ptr<T>;
 
+template<typename T>
+using weak = std::weak_ptr<T>;
+
 
 #define Log(M, ...) printf(M " \n", ##__VA_ARGS__)
 

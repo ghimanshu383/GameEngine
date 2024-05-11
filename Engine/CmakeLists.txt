@@ -7,6 +7,16 @@ add_library(${ENGINE} STATIC
 
 	${CMAKE_CURRENT_SOURCE_DIR}/includes/Log.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/Log.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Window.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Window.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Delegate.h
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/MathEngine.h
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/Object.h
+
+	${CMAKE_CURRENT_SOURCE_DIR}/includes/events/KeyboardEvnets.h
+
 ) 
 
 target_include_directories(${ENGINE} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes "D:/opengl/glew/include")
